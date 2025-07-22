@@ -1,102 +1,135 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.app{
-    min-height: 100vh;
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.todo-app{
-    width: 100%;
-    max-width: 400px;
-    border: 3px solid rgba(225, 225, 225, 0.185);
-    min-height: 300px;
-    transition: all 1s ease;
-    padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 0 50px white;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-    /* background-color: red; */
-    backdrop-filter: blur(10px) ;
-}
-h1{
-    font-size: 2rem;
+:root {
+  --bg: #ffffff;
+  --text: #000000;
+  --secondary: #f0f0f0;
+  --button: #1e88e5;
+  --task-bg: #eaeaea;
+  --progress-bg: #ccc;
+  --progress-fill: #1e88e5;
 }
 
-.stats{
-    border: 3px solid rgba(225, 225, 225, 0.185);
-    padding: 5px;
-    width: 100%;
-    display: flex;
+body.dark {
+  --bg: #121212;
+  --text: #ffffff;
+  --secondary: #1f1f1f;
+  --button: #90caf9;
+  --task-bg: #2a2a2a;
+  --progress-bg: #555;
+  --progress-fill: #90caf9;
 }
-.form{
-    width: 100%;
-    /* border: 2px solid; */
+#task-list {
+  max-height: 180px; /* approx. 3 items */
+  overflow-y: auto;
 }
-.form-group{
-    width: 100%;
-    display: flex;
-
-    gap: 10px;
-}
-.form-group input{
-    flex-grow: 1;
-    padding: 10px 15px ;
-    background-color: rgba(225, 225, 225, 0.185) ;
-    outline: none;
-    border-radius: 30px;
-    color: white;
-}
-.form-group input::placeholder{
-    color: grey;
-}
-.form-group button{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(225, 225, 225, 0.185) ;
-    color: white;
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
-.task-con{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.todo-app {
+  background-color: var(--secondary);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.task-con ul{
-    width: 100%;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.list-item{
-    padding: 10px 15px ;
-    background-color: rgba(225, 225, 225, 0.185) ;
-    border-radius: 30px;
-    list-style: none;
-    display: flex;
-    gap: 5px;
+
+#mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
 }
-.list-item span{
-    flex-grow: 1;
+
+form {
+  display: flex;
+  gap: 10px;
+  margin: 1rem 0;
 }
-.action{
-    border: 1px solid darkblue;
-    display: flex;
-    gap: 5px;
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--task-bg);
+  color: var(--text);
 }
-.action button{
-    padding: 2px;
-    border-radius: 20%;
+
+input[type="text"]::placeholder {
+  color: #888;
+}
+
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--button);
+  color: white;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background-color: var(--task-bg);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li span {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+.actions button {
+  background-color: #999;
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+.progress-container {
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  background-color: var(--progress-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+  margin-top: 5px;
+}
+
+.progress {
+  height: 10px;
+  background-color: var(--progress-fill);
+  width: 0%;
+  transition: width 0.3s;
 }

@@ -1,53 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-D0-List</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
-<body>
-    <div class="app">
-        <div class="todo-app">
-            <div class="h1">
-                <h1>To-Do-App</h1>
-            </div>
-            <div class="stats">
-                <div class="progress-con">
-                    <span>Keep it Up!</span>
-                    <div class="progressbar">
-                        <div class="progress"></div>
-                    </div>
-                </div>
-                <div class="overall">
-                    3/3
-                </div>
-            </div>
-            <div class="form ">
-                <form >
-                    <div class="form-group">
-                        <input type="text" placeholder="Add a new task..." >
-                        <button>add</button>
-                    </div>
-                </form>
-            </div>
-            <div class="task-con">
-                <ul class="" >
-                    <li class="list-item" >
-                        <input type="checkbox" >
-                        <span>okay</span>
-                        <div class="action">
-                            <button>Edit</button>
-                            <button>Delete</button>
-                        </div>
-                    </li>
-                </ul>
-                <div class="img">
-                    empty
-                </div>
-            </div>
+<body class="light">
+  <div class="app">
+
+     <div class="btn">
+            <a href="./indexb.html">Go to pract</a>
+     </div>
+
+    <div class="todo-app">
+      <div class="header">
+        <h1>To-Do List</h1>
+        <button id="mode-toggle">🌙</button>
+      </div>
+
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Add a new task..." />
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="stats">
+        <div class="progress-container">
+          <span id="progress-text">0 / 0 Completed</span>
+          <div class="progress-bar">
+            <div class="progress"></div>
+          </div>
         </div>
+      </div>
+
+      <ul id="task-list"></ul>
     </div>
-    <script src="./index.js"></script>
+  </div>
+
+  <script src="index.js"></script>
 </body>
 </html>
