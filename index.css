@@ -32,7 +32,25 @@ body {
   justify-content: center;
   align-items: center;
 }
-
+.logo{
+  /* border: 2px solid; */
+  width: 100%;
+  max-width: 400px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.logo :nth-child(1) {
+  /* border: 2px solid; */
+  width: 100%;
+  max-width: 400px;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
 .todo-app {
   background-color: var(--secondary);
   padding: 2rem;
